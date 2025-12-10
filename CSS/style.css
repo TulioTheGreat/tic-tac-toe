@@ -1,130 +1,193 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'poppins';
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "poppins";
 }
 
-body{
-    overflow: hidden;
-    background-color: #f2f2f2;
-    transition: 0.3s;
-    width: 100vw;
-    height: 100vh;
+body {
+  overflow: hidden;
+  background-color: #f2f2f2;
+  transition: 0.3s;
+  width: 100vw;
+  height: 100vh;
 }
 
-header{
-    padding: 2rem 4rem;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
+header {
+  padding: 2rem 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 }
 
-header input[type="checkbox"]{
-    display: none;
+header input[type="checkbox"] {
+  display: none;
 }
 
-ion-icon{
-    cursor: pointer;
+ion-icon {
+  cursor: pointer;
 }
 
-#moon{
-    display: none;
+#moon {
+  display: none;
 }
 
-#sunny{
-    display: block;
+#sunny {
+  display: block;
 }
 
-.main{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.container{
+.container {
   display: flex;
   flex-direction: column;
   gap: 2rem;
 }
 
-h1{
-    text-align: center;
-    font-size: 3rem;
-    margin-bottom: 10%;
+h1 {
+  text-align: center;
+  font-size: 3rem;
+  margin-bottom: 10%;
 }
 
-.game{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 2rem;
+.game {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2rem;
 }
 
-.game button{
-    background-color: #fff;
-    box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
-    border: none;
-    border-radius: 1rem;
-    width: 8rem;
-    height: 8rem;
-    cursor: pointer;
-    font-size: 2rem;
+.game button {
+  background-color: #fff;
+  box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+  border: none;
+  border-radius: 1rem;
+  width: 8rem;
+  height: 8rem;
+  cursor: pointer;
+  font-size: 2rem;
 }
 
-.current-player{
-    display: flex;
-    align-items: center;
+.current-player {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.fa-xmark {
+  color: #4ea8de;
+}
+
+.fa-o {
+  color: #ffd500;
+}
+
+.dark {
+  #moon {
+    display: block;
+  }
+
+  #sunny {
+    display: none;
+  }
+
+  .fa-xmark {
+    color: #81cfff;
+  }
+
+  .fa-o {
+    color: #ffe76c;
+  }
+
+  .game button {
+    background-color: #2b2b2b;
+  }
+
+  background-color: #090909;
+  color: #f2f2f2;
+}
+
+@media (max-width: 1400px) {
+  h1 {
+    margin-bottom: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .game {
     gap: 1rem;
+  }
+
+  .game button {
+    width: 6rem;
+    height: 6rem;
+  }
 }
 
-.fa-xmark{
-    color: #4ea8de;
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1000;
+  justify-content: center;
+  align-items: center;
 }
 
-.fa-o{
-    color: #ffd500;
+.modal.show {
+  display: flex;
 }
 
-.dark{
-    #moon{
-        display: block;
-    }
-
-    #sunny{
-        display: none;
-    }
-
-    .fa-xmark{
-        color: #81cfff;
-    }
-
-    .fa-o{
-        color: #ffe76c;
-    }
-
-    .game button{
-        background-color: #2b2b2b;
-    }
-
-    background-color: #090909;
-    color: #f2f2f2;
+.modal-content {
+  background: var(--bg-color, #fff);
+  color: var(--text-color, #000);
+  padding: 40px 60px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  animation: slideDown 0.3s ease;
 }
 
-@media (max-width: 1400px){
-    h1{
-        margin-bottom: 0;
-    }
+@keyframes slideDown {
+  from {
+    transform: translateY(-50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
-@media (max-width: 600px){
-    .game{
-        gap: 1rem;
-    }
+.modal-content h2 {
+  margin-bottom: 25px;
+  font-size: 2rem;
+}
 
-    .game button{
-        width: 6rem;
-        height: 6rem;
-    }
+.btn-restart {
+  padding: 12px 30px;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 8px;
+  background: #4caf50;
+  color: white;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.btn-restart:hover {
+  background: #45a049;
+}
+
+body.dark .modal-content {
+  background: #2c2c2c;
+  color: #fff;
 }

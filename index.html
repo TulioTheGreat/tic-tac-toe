@@ -1,51 +1,63 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/f4f13ff542.js" crossorigin="anonymous"></script>
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/f4f13ff542.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
     <script src="./JS/script.js" defer></script>
-    <link rel="stylesheet" href="./CSS/style.css">
-    <link rel="icon" type="image/x-icon" href="./img/jogao.ico">
-    <title>Jogo da Velha</title>
-</head>
+    <link rel="stylesheet" href="./CSS/style.css" />
+    <link rel="icon" type="image/x-icon" href="./img/jogao.ico" />
+    <title>Tic Tac Toe</title>
+  </head>
 
-<body class="dark">
-
+  <body class="dark">
     <header>
-        <input type="checkbox" name="change-theme" id="change-theme">
-        <label for="change-theme">
-            <ion-icon id="sunny" size="large" name="sunny"></ion-icon>
-            <ion-icon id="moon" size="large" name="moon"></ion-icon>
-        </label>
+      <input type="checkbox" name="change-theme" id="change-theme" />
+      <label for="change-theme">
+        <ion-icon id="sunny" size="large" name="sunny"></ion-icon>
+        <ion-icon id="moon" size="large" name="moon"></ion-icon>
+      </label>
     </header>
 
     <main class="main">
+      <div class="container">
+        <h1>Tic Tac Toe</h1>
 
-        <div class="container">
-            <h1>Jogo da Velha</h1>
-
-            <div class="game">
-                <button data-i="1"></button>
-                <button data-i="2"></button>
-                <button data-i="3"></button>
-                <button data-i="4"></button>
-                <button data-i="5"></button>
-                <button data-i="6"></button>
-                <button data-i="7"></button>
-                <button data-i="8"></button>
-                <button data-i="9"></button>
-            </div>
-
-            <h2 class="current-player"></h2>
-
-
+        <div class="game">
+          <button data-i="1"></button>
+          <button data-i="2"></button>
+          <button data-i="3"></button>
+          <button data-i="4"></button>
+          <button data-i="5"></button>
+          <button data-i="6"></button>
+          <button data-i="7"></button>
+          <button data-i="8"></button>
+          <button data-i="9"></button>
         </div>
-    </main>
-</body>
 
+        <h2 class="current-player"></h2>
+      </div>
+    </main>
+
+    <div id="game-modal" class="modal">
+      <div class="modal-content">
+        <h2 id="modal-message"></h2>
+        <button id="modal-close-btn" class="btn-restart">
+          Jogar Novamente
+        </button>
+      </div>
+    </div>
+  </body>
 </html>
